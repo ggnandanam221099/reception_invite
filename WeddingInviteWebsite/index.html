@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gokul G & Anupama V S Wedding</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      text-align: center;
+      background: #fff8f0;
+      color: #4b2e2e;
+      margin: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('Img2.jpg') no-repeat top center / cover;
+      filter: blur(0px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    header {
+      position: relative;
+      padding: 4em 2em;
+      /*background: #f8e7e7;*/
+      overflow: hidden;
+    }
+
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0.5em 0;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    .couple {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      /*background: #fff0f5;*/
+    }
+
+    .person {
+      width: 40%;
+      margin: 1em 0;
+    }
+
+    .venue {
+      /*background: #f0f8ff;*/
+    }
+
+    .map-btn {
+      background: #a0522d;
+      color: white;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #ddd;
+      padding: 1em;
+    }
+
+    #countdown {
+      font-size: 1.2em;
+      margin-top: 1em;
+      color: #a0522d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Join Us For the Wedding Of</h2>
+    <h1>Gokul G & Anupama V S</h1>
+    <p>On 28 August 2025, Thursday</p>
+    <div id="countdown"></div>
+  </header>
+
+  <section class="invitation">
+    <p>We coordially invite your esteemed presence with family for the wedding</p>
+  </section>
+
+  <section class="couple">
+    <div class="person">
+      <h3>GOKUL G</h3>
+      <p>The Groom</p>
+      <p>Mr. Govindankutty T & Mrs. Sreerekha Govind</p>
+      <p>Nandanam House, Thekkummuttom Road, Manjummel, Kochi, Pin: 683501</p>
+    </div>
+    <div class="person">
+      <h3>ANUPAMA V S</h3>
+      <p>The Bride</p>
+      <p>D/o Mr. Unnikrishnan V P & Mrs. Seena M R</p>
+      <p>Vadakkedath House, Thiruvalloor, Alangad P O, Kochi, Pin 683511</p>
+    </div>
+  </section>
+
+  <section class="venue">
+    <h3>Carmel Hall Manjummel</h3>
+    <a href="https://maps.app.goo.gl/v3RXVFKmZAhh5jZW6" class="map-btn" target="_blank">View Map</a>
+  </section>
+
+  <section class="reception">
+    <h3>Our Big Date</h3>
+    <p>28/08/2025 | Reception | 06:00 PM - 09:00 PM</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Gokul & Anupama</p>
+  </footer>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+    const eventDate = new Date("August 28, 2025 00:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days} Days, ${hrs} Hours, ${mins} Minutes, ${secs} Seconds left`;
+    }, 1000);
+  </script>
+</body>
+</html>
